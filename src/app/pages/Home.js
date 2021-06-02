@@ -19,7 +19,7 @@ const Home = () => {
     }
 
     useEffect(() => {
-        axios.get('http://jsonplaceholder.typicode.com/todos')
+        axios.get('https://jsonplaceholder.typicode.com/todos')
             .then(res => dispatch(setTasks(res.data)))
         // eslint-disable-next-line
     }, [])
