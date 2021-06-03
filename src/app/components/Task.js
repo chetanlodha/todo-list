@@ -10,7 +10,7 @@ const Task = ({ index, id, userId, title, completed }) => {
     const updateCompletedStatus = () => dispatch(updateTask({ id, userId, title, completed: !completed }))
 
     return (
-        <article className={`task ${completed ? 'completed' : ''} shadow m-2 p-3 rounded-lg`}
+        <article className={`task ${completed ? 'completed' : ''} rounded-lg shadow m-2 p-3`}
             data-id={id} style={{ "--order": `${index + 1}` }}>
             <div className="d-flex justify-content-between align-items-start">
                 <h1>{userId}</h1>

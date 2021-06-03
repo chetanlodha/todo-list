@@ -5,19 +5,19 @@ import { addTask } from "../reducers/taskSlice"
 const AddTask = ({ isVisible, setVisibility, tasks }) => {
 
     const dispatch = useDispatch()
-    const [userId, setUserId] = useState(0)
+    const [userId, setUserId] = useState('')
     const [title, setTitle] = useState('')
     const [completed, setCompleted] = useState(false)
 
     const onSubmit = (e) => {
         let errors = []
-        if (typeof (userId) !== "number")
+        if (typeof (parseInt(userId)) !== "number")
             errors.push("userId must be a number")
         if (!title.length)
             errors.push("title cannot be empty")
         if (errors.length)
             return alert(errors.map(error => error))
-        dispatch(addTask({ id: tasks.length + 1, userId: userId, title: title, completed: completed }))
+        dispatch(addTask({ id: tasks.length + 1, userId: parseInt(userId), title: title, completed: completed }))
         alert('Task has been added successfully')
     }
 

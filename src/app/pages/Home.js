@@ -48,7 +48,7 @@ const Home = () => {
                     </div>
                 }
                 {
-                    tasks.length && searchText === '' && 
+                    tasks.length && searchText === '' && !isAddTaskVisible &&
                     <em><h6 className="opacity-50 mt-2 p-3">Get started by searching for a user</h6></em>
                 }
                 {
